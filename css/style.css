@@ -10,7 +10,7 @@
 @font-face {
     font-family: Halogen;
     src: url('../fonts/Halogen-Regular.otf');
-  }
+}
 
 * {
     box-sizing: border-box;
@@ -29,10 +29,10 @@
 
 .app {
     display: flex;
-    /* min-height: 100vh; */
     background-color: var(--bg-color);
     border-radius: 20px;
     mix-blend-mode: luminosity;
+    min-height: 100vh;
 }
 
 /* SPINNER */
@@ -79,7 +79,7 @@
 
 .content .top-pane .top-l-pane {
     flex: 0.8 0.8;
-    border-right: 1px solid #2a5254;
+    border-right: 1px solid var(--dark-green);
 }
 
 .content .top-pane .top-l-pane .info-group-2 {
@@ -114,7 +114,7 @@
     font-size: 3.8vw;
     text-transform: uppercase;
     padding: 2rem;
-    border-bottom: 1px solid #2a5254;
+    border-bottom: 1px solid var(--dark-green);
 }
 
 .content .top-pane .top-r-pane h2 {
@@ -135,7 +135,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-right: 1px solid #2a5254;
+    border-right: 1px solid var(--dark-green);
 }
 
 .content .bottom-pane .info-group .effectiveness,
@@ -155,7 +155,7 @@
 .content .bottom-pane .info-group .divider {
     height: 50%;
     width: 1px;
-    background: #2a5254;
+    background: var(--dark-green);
 }
 
 .content .bottom-pane .info-group-3 {
@@ -329,5 +329,11 @@
 
     .content .bottom-pane .info-group-3 p {
         max-width: 300px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .content .top-pane .top-l-pane .image {
+        height: 600px;
     }
 }
