@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Weather App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src='index.js'></script>
+</head>
+<body>
+    <div class="root">
+        <div class="app">
+            <div class="menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <div class="menu-icon">
+                    <img class="logo" src="assets/Logo.svg" alt="MYC-LOGO" />
+                </div>
+                <nav class="menu">
+                    <a href="#" class="menu-item active">home</a>
+                    <a href="#" class="menu-item">research</a>
+                    <a href="#" class="menu-item">team</a>
+                    <a href="#" class="menu-item">the lab</a>
+                    <a href="#" class="menu-item">about</a>
+                    <a href="#" class="menu-item">contact</a>
+                </nav>
+            </aside>
+            <main class="content">
+                <section class="top-pane">
+                    <div class="top-l-pane">
+                        <div class="info-group-2">
+                            <div class="loader"></div>
+                            <p id="location"></p>
+                            <p id="temperature"></p>
+                        </div>
+                        <div class="image"></div>
+                    </div>
+                    <div class="top-r-pane">
+                        <h1><strong>science</strong> can change our <strong>future!</strong> </h1>
+                        <h2>We are the only lab to use new methods to identify diseases</h2>
+                    </div>
+                </section>
+                
+                <section class="bottom-pane">
+                    <div class="info-group">
+                        <div class="effectiveness">
+                            89%
+                            <span>effectiveness</span>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tests">
+                            2356
+                            <span>new tests</span>
+                        </div>
+                    </div>
+                    <div class="info-group-3">
+                        <div class="info-group-3-wrapper">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer orci dui, viverra quis convallis pharetra, accumsan a nisi. Proin non lorem quis mi scelerisque semper.</p>
+                            <button>read more</button>
+                        </div>
+                        
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="js/location.js"></script>
+    <script src="js/side-bar.js"></script>
+</body>
+</html>

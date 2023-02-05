@@ -1,0 +1,333 @@
+:root {
+    --dark-green: #2a5254;
+    --bg-color: #fffbf4;
+    --black: #000;
+    --gray: #d4d4d4;
+    --l-padding: 1rem 2rem;
+    --m-padding: 0.5rem 2rem;
+}
+
+@font-face {
+    font-family: Halogen;
+    src: url('../fonts/Halogen-Regular.otf');
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--dark-green);
+    font-family: Halogen;
+}
+
+.root {
+    padding: 2rem;
+    background-color: var(--dark-green);
+    background-image: url("../assets/texture.png");
+    background-blend-mode: overlay;
+}
+
+.app {
+    display: flex;
+    /* min-height: 100vh; */
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    mix-blend-mode: luminosity;
+}
+
+/* SPINNER */
+
+.loader {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: 5px solid var(--gray);
+    border-bottom-color: var(--dark-green);
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotation 1s linear infinite;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+
+/* CONTENT */
+
+.content {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .top-pane {
+    flex: 0.6 0.6;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--dark-green);
+}
+
+.content .top-pane .top-l-pane {
+    flex: 0.8 0.8;
+    border-right: 1px solid #2a5254;
+}
+
+.content .top-pane .top-l-pane .info-group-2 {
+    padding: var(--m-padding);
+    height: 48px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.content .top-pane .top-l-pane .info-group-2 p {
+    font-size: 0.8rem;
+}
+
+.content .top-pane .top-l-pane .image {
+    width: 100%;
+    height: 460px;
+    background-image: url('../assets/science.png');
+    object-fit: cover;
+    background-position: 85% 73%;
+    background-size: 225%;
+    background-repeat: no-repeat;
+}
+
+.content .top-pane .top-r-pane {
+    flex: 1 1 0;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.content .top-pane .top-r-pane h1 {
+    font-size: 3.8vw;
+    text-transform: uppercase;
+    padding: 2rem;
+    border-bottom: 1px solid #2a5254;
+}
+
+.content .top-pane .top-r-pane h2 {
+    padding: 2rem;
+    font-size: 1.9vw;
+    max-width: 400px;
+}
+
+.content .bottom-pane {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content .bottom-pane .info-group {
+    flex: 0.8 0.8;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 1px solid #2a5254;
+}
+
+.content .bottom-pane .info-group .effectiveness,
+.content .bottom-pane .info-group .tests {
+    display: flex;
+    flex-direction: column;
+    font-size: 2vw;
+    align-items: end;
+}
+
+.content .bottom-pane .info-group .effectiveness > span,
+.content .bottom-pane .info-group .tests > span {
+    font-size: 0.5rem;
+    text-transform: uppercase;
+}
+
+.content .bottom-pane .info-group .divider {
+    height: 50%;
+    width: 1px;
+    background: #2a5254;
+}
+
+.content .bottom-pane .info-group-3 {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .bottom-pane .info-group-3-wrapper {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.content .bottom-pane .info-group-3 button {
+   text-transform: uppercase;
+   padding: 0.8rem 1.2rem;
+   background: var(--dark-green);
+   color: var(--bg-color);
+   font-size: 0.8rem;
+   outline: none;
+   border: none;
+   cursor: pointer;
+   font-size: 0.6rem;
+}
+
+.content .bottom-pane .info-group-3 p {
+    max-width: 350px;
+    font-size: 0.8rem;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    flex: 1 1 0;
+    max-width: 260px;
+    border-right: 1px solid var(--dark-green);
+}
+
+.sidebar .menu {
+    padding: 2rem;
+}
+
+.sidebar .menu .menu-item {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    transition: 0.2s linear;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.sidebar .menu .menu-item:hover,
+.sidebar .menu .menu-item.active {
+    text-decoration: underline;
+}
+
+.sidebar .menu-icon {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-bottom: 1px solid var(--dark-green);
+}
+
+.sidebar .menu-icon .logo {
+    max-width: 100%;
+    height: auto;
+    width: 100px;
+}
+
+.menu-toggle {
+	display: none;
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	width: 60px;
+	height: 60px;
+	border-radius: 70px;
+	cursor: pointer;
+}
+
+.hamburger {
+	position: relative;
+	top: calc(50% - 2px);
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 32px;
+}
+
+.hamburger > span,
+.hamburger > span::before,
+.hamburger > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 99px;
+  background-color: var(--dark-green);
+  transition-duration: .25s;
+}
+
+.hamburger > span::before {
+  content: '';
+  top: -8px;
+}
+.hamburger > span::after {
+  content: '';
+  top: 8px;
+}
+.menu-toggle.active .hamburger > span {
+  transform: rotate(45deg);
+}
+.menu-toggle.active .hamburger > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+.menu-toggle.active .hamburger > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+
+@media (max-width: 1024px) {
+    .sidebar {
+        max-width: 200px;
+    }
+
+    .content .top-pane,
+    .content .bottom-pane {
+        flex-direction: column;
+    }
+
+    .content .bottom-pane .info-group {
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--dark-green);
+    }
+}
+
+@media (max-width: 768px) {
+    .root {
+        padding: 1rem;
+    }
+	.menu-toggle {
+		display: block;
+	}
+	.content {
+		padding-top: 4rem;
+	}
+	.sidebar {
+		position: fixed;
+		top: 0;
+		left: -300px;
+		height: 100vh;
+		width: 100%;
+		max-width: 260px;
+		transition: 0.2s linear;
+        z-index: 1;
+	}
+
+	.sidebar.active {
+		left: 0;
+        background: var(--bg-color);
+	}
+    .content .bottom-pane .info-group-3 p,
+    .content .bottom-pane .info-group-3 button {
+        font-size: 0.6rem;
+    }
+
+    .content .bottom-pane .info-group-3 p {
+        max-width: 300px;
+    }
+}
